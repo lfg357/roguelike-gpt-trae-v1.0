@@ -1,0 +1,30 @@
+# Godot 4.x gitignore
+
+# Godot editor files
+.godot/
+*.import
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build outputs
+*.exe
+*.pck
+*.zip
+build/
+
+# Python (for tools)
+__pycache__/
+*.pyc
+.venv/
+
+# Logs
+*.log
