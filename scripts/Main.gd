@@ -1933,6 +1933,8 @@ func _clear_room() -> void:
 	if drops.is_empty():
 		drops.append({"type": "relic", "item": _random_relic(), "pos": player["pos"] + Vector2(80, 0)})
 	_show_message("房间已清理。拾取奖励后按E进入下一个相邻房间。", 3.0)
+	combat_feedback_module.clear_all()
+	slash = {}
 
 
 func _complete_boss_floor() -> void:
@@ -2547,8 +2549,6 @@ func _refresh_disk_ui() -> void:
 		_add_effect_button(name, PATTERN_DESCS.get(name, "该五行格局已激活，详细效果待数据表补全。"), _effect_color("pattern"))
 	for name in player["combos"]:
 		_add_effect_button(name, TAG_COMBO_DESCS.get(name, "该标签组合已激活，详细效果待数据表补全。"), _effect_color("combo"))
-	for tag in _active_disk_tags():
-		_add_effect_button(tag, TAG_DESCS.get(tag, "该标签暂无说明。"), _tag_color(tag))
 
 	var pattern_text := " / ".join(player["patterns"]) if not player["patterns"].is_empty() else "暂无格局"
 	var combo_text := " / ".join(player["combos"]) if not player["combos"].is_empty() else "暂无标签组合"
