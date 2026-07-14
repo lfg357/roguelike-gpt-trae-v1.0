@@ -895,7 +895,6 @@ func _process(delta: float) -> void:
 			message_label.visible = false
 
 	if state != "menu":
-		player_module.update_timers(delta)
 		player_module.move(delta)
 		if state == "combat":
 			enemy_module.update_combat(delta)
