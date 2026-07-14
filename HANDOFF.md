@@ -605,4 +605,37 @@ ERROR: Failed to load script "res://scripts/Main.gd" with error "Parse error".
 - 五行圆满特效是否仅在激活格局时触发
 - 其他动画状态（idle/run/attack/dodge）是否正常
 
+---
+
+## 20. 2026-07-14 GitHub 版本管理建立
+
+### 20.1 仓库信息
+
+- 远程仓库：https://github.com/lfg357/roguelike-gpt-trae-v1.0.git
+- 本地分支：master（跟踪 origin/master）
+- Git 身份：lfg357 / 2931067203@qq.com
+
+### 20.2 初始提交
+
+| Commit | 说明 |
+|--------|------|
+| e777938 | init: 仙途墨渊 roguelike v1.1 初始提交（116文件，15011行） |
+| b0ddc4a | docs: 新增 Rule-016 GitHub版本管理原则 和 Rule-017 修改前checkpoint原则 |
+
+### 20.3 新增规则
+
+- **Rule-016 GitHub 版本管理原则**：所有修改必须 commit 后才算完成；多文件修改前先提交 checkpoint；未经测试禁止 push；视觉/动画修改必须实机验证后才可 push；回退用 git revert 不用 reset --hard；每个任务批次完成后必须 push。
+- **Rule-017 修改前 checkpoint 原则**：修改渲染/动画/物理/核心逻辑前，先 git commit 创建 checkpoint；修改不符合预期时立即 git revert，不在错误基础上继续修补。
+
+### 20.4 .gitignore 配置
+
+排除项：.godot/、*.import、IDE文件、OS文件、构建产物、Python缓存、日志文件。
+
+### 20.5 对后续开发的影响
+
+- 所有代码修改必须遵循 Rule-016/017 的版本管理流程
+- 修改前先 commit checkpoint，修改后验证通过再 push
+- 出现问题用 git revert 回退，保留完整历史
+- 后续开发使用 feature/ 和 fix/ 前缀分支管理
+
 最后强调一次：**先读 HANDOFF.md**。
